@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/login.css">
+		<title>학교 Wi-Fi 로그인</title>
+	</head>
+	<body>
+		<script src="js/login.js"></script>
+		<div class="container right-panel-active">
+		<!-- Sign Up -->
+			<div class="container__form container--signup">
+				<form action="$authaction" class="form" method="GET" id="form1">
+					<h2 class="form__title">비회원 접속</h2>
+					<input type="hidden" name="tok" value="$tok">
+					<input type="hidden" name="redir" value="$redir">
+					<div class="container container__check">
+						<h3 class="textarea_title">이용 약관 동의(필수)</h3>
+						<input class="rule_checkbox" type="checkbox" name="username"/>
+					</div>
+					<textarea class="textarea_rule" cols="20" rows="3" readonly> 비회원 로그인은 회원 즉 학생과, 교직원 및 교수들의 원활한 로그인을 위해 언제든 종료될수있으며 1시간의 무료 인터넷을 제공합니다. 제공 이후에는 다시 접속을 시도해야합니다.</textarea>
+					<div class="container container__check">
+						<h3 class="textarea_title">개인정보 수집 및 이용동의 (필수)</h3>
+						<input class="rule_checkbox" type="checkbox" name="password"/>
+					</div>
+					<textarea class="textarea_rule" cols="20" rows="3" readonly> 서비스 이용시 자동으로 생성 되는 항목과 단말MAC주소, 기기종류, 쿠키는 WIFI 인증 및 WIFI서비스를 위해 수집되며 수집 후 3개월동안 저장됩니다.
+위 개인정보 수집 및 이용동의를 거부할 권리가 있으나 동의를 거부할 경우 비회원 WIFI를 이용하실수 없습니다.</textarea>
+					<button class="btn">비회원 접속</button>
+				</form>
+			</div>
+
+			<!-- Sign In -->
+			<div class="container__form container--signin">
+				<form action="$authaction" class="form" method="GET" id="form2">
+					<h2 class="form__title">학교 Wi-Fi 로그인</h2>
+					<input type="hidden" name="tok" value="$tok">
+					<input type="hidden" name="redir" value="$redir">
+					<input name="username" type="text" placeholder="학번" class="input" required autofocus/>
+					<input name="password" type="password" placeholder="학교 포털 비밀번호" class="input" />
+					<a href="https://smsso.smu.ac.kr/sm/PwdResetPage.do" class="link">비밀번호찾기</a>
+					<button class="btn" type="submit">Wi-Fi에 로그인</button>
+				</form>
+			</div>
+
+			<!-- Overlay -->
+			<div class="container__overlay">
+				<div class="overlay">
+					<div class="overlay__panel overlay--left">
+						<button class="btn" id="signIn">Wi-Fi에 로그인</button>
+					</div>
+					<div class="overlay__panel overlay--right">
+						<button class="btn" id="signUp">비회원 접속</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
